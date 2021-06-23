@@ -1,0 +1,14 @@
+.list-world{
+	list-style-type: none;
+	padding: 0;
+	background: #12698049;
+	width: 23%;
+	border: 2px dotted black;
+	border-radius: 5px;
+	float: left;
+	margin-right: 10px;
+}
+.list-world li{
+	padding: 20px;
+
+}

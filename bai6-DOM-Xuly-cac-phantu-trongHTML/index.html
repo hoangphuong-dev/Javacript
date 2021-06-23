@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DOM</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+<body>
+	<div class="container mt-5">
+		<!-- truy xuất từng thẻ HTML lấy thuộc tính  -->
+		<input type="text" name="" id="input_1" value="1" gia_tri="Day la gia tri">
+		<div class="mt-3" id="kq_input_1">Thông tin mày cần đây</div>
+	<!-- có 3 phương thức để truy xuất vào các thẻ HTML 
+	- document.getElementById('id cần tìm')
+	- document.getElementByTagName('h1')
+	- document.getElementByClassName('ten_class')
+	- document.getElementByName(name) -->
+
+
+	<!-- Thay đổi thuộc tính cho thẻ HTML -->
+	<button class="btn btn-outline-danger" onclick="readOnly()" >Set read only</button>
+
+	<!-- Thêm thẻ html bằng js  -->
+	<div id="them_vao_day">
+		
+	</div>
+	<!-- lấy Css và thay đổi css -->
+	<div id="div_css" style="background: red; width: 200px; height: 200px">
+		
+	</div>
+
+</div>
+</body>
+<script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+<script>
+	let input_1 = document.getElementById("input_1")
+	console.log(input_1.value)
+		// lấy thuộc tính user_define
+		let gia_tri = input_1.getAttribute("gia_tri")
+		// gán giá trị cho các thẻ HTML
+		// let div_input_1 = document.getElementById("kq_input_1")
+		// div_input_1.innerHTML = gia_tri
+		// lấy thông tin trong thẻ div có id = kq_input_1
+		let div_input_1 = document.getElementById("kq_input_1")
+		let html = div_input_1.innerHTML
+		console.log(html)
+	</script>
+
+	<script>
+		function readOnly() {
+			let input_1 = document.getElementById("input_1")
+			input_1.setAttribute("readonly", true)
+		}
+	</script>
+	<script>
+		let them_vao_day = document.getElementById("them_vao_day")
+		let h1 = document.createElement("h1")
+		h1.innerHTML = "Thẻ h1 vừa thêm vào"
+		them_vao_day.appendChild(h1)
+	</script>
+	<script>
+		let div_css = document.getElementById("div_css")
+		let css = div_css.style.width
+		console.log(css)
+		div_css.style.background = "blue"
+	</script>
+
+	</html>
